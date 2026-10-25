@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spillway: Scotland's wasted wind</title>
+<meta name="description" content="How much Scottish wind power is paid to switch off, by grid boundary and wind farm. Updated daily from Elexon and NESO open data.">
+<meta property="og:title" content="Spillway: Scotland's wasted wind">
+<meta property="og:description" content="How much Scottish wind power is paid to switch off, updated daily.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b6e75'/%3E%3Cpath d='M6 12h20M6 17c4 0 4 3 8 3s4-3 8-3 4 3 4 3M6 23c4 0 4 3 8 3s4-3 8-3' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="mark" href="./" aria-label="Spillway home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7"/><path d="M6 12h20M6 17c4 0 4 3 8 3s4-3 8-3 4 3 4 3M6 23c4 0 4 3 8 3s4-3 8-3"/></svg>
+    <span>Spillway</span>
+  </a>
+  <nav><a href="./" aria-current="page">Tracker</a><a href="methodology.html">Methodology</a></nav>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="kicker" id="kicker">Scotland's wasted wind</p>
+    <h1><span class="big" id="hero-gwh">—</span> <span class="unit">GWh</span></h1>
+    <p class="lede" id="hero-lede">of Scottish wind power was paid to switch off in the last 7 days.</p>
+    <dl class="hero-stats">
+      <div><dt>Paid to wind farms, 7 days</dt><dd id="hero-gbp">—</dd></div>
+      <div><dt>Switched off, 30 days</dt><dd id="m30-gwh">—</dd></div>
+      <div><dt>Paid, 30 days</dt><dd id="m30-gbp">—</dd></div>
+    </dl>
+    <p class="status" id="status" hidden></p>
+  </section>
+
+  <section class="zones" aria-labelledby="zones-h">
+    <h2 id="zones-h">Where the wind was wasted</h2>
+    <p class="section-lede">Power curtailed behind a grid bottleneck can only be used by demand behind the same bottleneck. Scotland has two: B4 (north of the Central Belt) and B6 (the border).</p>
+    <div class="zone-grid">
+      <article class="zone z-north">
+        <h3>North of B4</h3>
+        <p class="zone-sub">Highlands, islands, Moray, Aberdeenshire, Argyll, Perthshire</p>
+        <dl>
+          <div><dt>Switched off, 30 days</dt><dd data-z="north_of_B4" data-k="mwh">—</dd></div>
+          <div><dt>Paid</dt><dd data-z="north_of_B4" data-k="gbp">—</dd></div>
+          <div><dt>Average paid per MWh</dt><dd data-z="north_of_B4" data-k="gbp_per_mwh">—</dd></div>
+        </dl>
+      </article>
+      <article class="zone z-mid">
+        <h3>Between B4 and B6</h3>
+        <p class="zone-sub">Central Belt, Lothians, Lanarkshire, Ayrshire, Borders, Dumfries &amp; Galloway</p>
+        <dl>
+          <div><dt>Switched off, 30 days</dt><dd data-z="B4_to_B6" data-k="mwh">—</dd></div>
+          <div><dt>Paid</dt><dd data-z="B4_to_B6" data-k="gbp">—</dd></div>
+          <div><dt>Average paid per MWh</dt><dd data-z="B4_to_B6" data-k="gbp_per_mwh">—</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="chart-h">
+    <h2 id="chart-h">Wind switched off each day, last 90 days</h2>
+    <div class="legend"><span class="key k-north"></span>North of B4 <span class="key k-mid"></span>Between B4 and B6</div>
+    <div id="chart" class="chart" role="img" aria-label="Daily curtailed wind energy in Scotland by boundary zone"></div>
+    <p class="chart-note" id="chart-note"></p>
+  </section>
+
+  <section aria-labelledby="sites-h">
+    <h2 id="sites-h">Most-curtailed wind farms, last 30 days</h2>
+    <div class="table-wrap">
+      <table id="sites">
+        <thead><tr><th scope="col">Wind farm</th><th scope="col">Zone</th><th scope="col" class="num">Switched off</th><th scope="col" class="num">Paid</th><th scope="col" class="num">Per MWh</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="fine">Negative payments are real: some farms (often on Contracts for Difference) bid to pay the grid when they're turned down, rather than be paid. <a href="methodology.html#negative">Why</a>.</p>
+  </section>
+
+  <section class="checks" aria-labelledby="checks-h">
+    <h2 id="checks-h">How we check these numbers</h2>
+    <ul id="checks-list"><li>Loading…</li></ul>
+  </section>
+</main>
+
+<footer>
+  <p id="updated">Data loading…</p>
+  <p id="attribution">BMRS data © Elexon Limited copyright and database right. Supported by National Energy SO Open Data.</p>
+  <p><a href="methodology.html">Methodology and limitations</a></p>
+</footer>
+<script src="assets/app.js" defer></script>
+</body>
+</html>

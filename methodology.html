@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology · Spillway</title>
+<meta name="description" content="How Spillway calculates Scottish wind curtailment from Elexon and NESO open data, how it's checked, and its limitations.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b6e75'/%3E%3Cpath d='M6 12h20M6 17c4 0 4 3 8 3s4-3 8-3 4 3 4 3M6 23c4 0 4 3 8 3s4-3 8-3' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="mark" href="./" aria-label="Spillway home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7"/><path d="M6 12h20M6 17c4 0 4 3 8 3s4-3 8-3 4 3 4 3M6 23c4 0 4 3 8 3s4-3 8-3"/></svg>
+    <span>Spillway</span>
+  </a>
+  <nav><a href="./">Tracker</a><a href="methodology.html" aria-current="page">Methodology</a></nav>
+</header>
+
+<main class="prose">
+  <section class="hero">
+    <h2>Methodology</h2>
+    <p>Spillway measures how much Scottish wind generation the grid operator pays to switch off, where it happens, and what it costs. Every figure is computed from public settlement data by deterministic code, then checked against an independent source before it's published.</p>
+  </section>
+
+  <section>
+    <h2>Data sources</h2>
+    <ul>
+      <li><strong>Elexon Insights (BMRS):</strong> indicative bid volumes and cashflows for every Balancing Mechanism unit, per half-hour settlement period, plus the BM unit reference list (fuel type, region).</li>
+      <li><strong>NESO data portal:</strong> daily thermal constraint costs by constraint boundary, used as context.</li>
+    </ul>
+    <p>BMRS data © Elexon Limited copyright and database right. Supported by National Energy SO Open Data.</p>
+  </section>
+
+  <section>
+    <h2>Definitions</h2>
+    <ul>
+      <li><strong>Switched off (curtailed) energy</strong> for a wind unit on a day is the sum of its accepted bid volumes, which are the instructions to reduce output, in MWh.</li>
+      <li><strong>Paid</strong> is the sum of that unit's bid cashflows in £. Positive means the grid paid the wind farm to reduce output.</li>
+      <li>Only units Elexon classifies as wind are included. Bids on wind units are almost all instructed to manage grid constraints; we don't separate the small share used for overall energy balancing.</li>
+      <li>Where Elexon publishes a revised figure for a half-hour, only the latest version is used.</li>
+      <li>Settlement days run midnight to midnight UK time, so clock-change days have 46 or 50 half-hours.</li>
+    </ul>
+  </section>
+
+  <section id="negative">
+    <h2>Why some payments are negative</h2>
+    <p>Each generator sets its own bid price. Many older wind farms earn subsidy per MWh generated, so they bid negative prices: the grid pays them to stop. Some newer farms on Contracts for Difference bid positive prices instead, which means they pay the grid when they're turned down. Both show up as curtailed energy; only the first shows up as a payment to the farm.</p>
+  </section>
+
+  <section>
+    <h2>Grid boundaries</h2>
+    <p>Power can only flow south as fast as the transmission lines allow. Two boundaries matter in Scotland: <strong>B4</strong>, between the north of Scotland and the Central Belt, and <strong>B6</strong>, between Scotland and England. Curtailed power can only be absorbed by demand behind the same boundary, so a site's value depends on which side it sits.</p>
+    <p>Each wind unit is assigned a zone using Elexon's region code where it has one, and the wind farm's location otherwise. These assignments are <strong>provisional</strong> until checked against grid connection records; the tracker shows how many are verified.</p>
+  </section>
+
+  <section>
+    <h2>Checks before publishing</h2>
+    <ul>
+      <li><strong>Volume cross-check:</strong> our daily GB wind turn-down totals are compared with an independent tracker. If the total over the comparison window differs by more than 10%, nothing is published.</li>
+      <li><strong>Monthly reconciliation:</strong> where published monthly figures exist, our totals must agree within 10%.</li>
+      <li><strong>Sign check:</strong> a month where wind farms are, on balance, paying the grid is flagged for investigation.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Limitations</h2>
+    <ul>
+      <li>Elexon's indicative figures are published before final settlement and can be revised.</li>
+      <li>Payments are what wind farms received for reducing output. They exclude the cost of the replacement generation (usually gas) switched on elsewhere, which headline "constraint cost" figures often include.</li>
+      <li>Boundary assignments are provisional, as above.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>BMRS data © Elexon Limited copyright and database right. Supported by National Energy SO Open Data.</p>
+  <p><a href="./">Back to the tracker</a></p>
+</footer>
+</body>
+</html>
