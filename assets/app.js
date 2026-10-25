@@ -144,7 +144,7 @@
         ". Nothing is published if any differs by more than 10%.",
       "Boundary zones are assigned to " + m.scottish_units + " Scottish wind units; " + m.verified +
         " are verified against grid connection records so far. Treat zone splits as provisional.",
-      "Every figure is computed from Elexon settlement data by deterministic code. No figure on this page is estimated or written by AI."
+      "Every figure is computed from Elexon settlement data by deterministic code. Payment attribution includes the approximation described in our methodology."
     ];
     ul.innerHTML = "";
     items.forEach(function (t) { var li = document.createElement("li"); li.textContent = t; ul.appendChild(li); });
