@@ -38,9 +38,9 @@
   <section>
     <h2>Definitions</h2>
     <ul>
-      <li><strong>Switched off (curtailed) energy</strong> for a wind unit on a day is the sum of its accepted bid volumes, which are the instructions to reduce output, in MWh.</li>
-      <li><strong>Paid</strong> is the sum of that unit's bid cashflows in £. Positive means the grid paid the wind farm to reduce output.</li>
-      <li>Only units Elexon classifies as wind are included. Bids on wind units are almost all instructed to manage grid constraints; we don't separate the small share used for overall energy balancing.</li>
+      <li><strong>Switched off (curtailed) energy</strong> for a wind unit on a day is the volume of its accepted bids, the instructions to reduce output, that the grid operator flags as system actions, in MWh. Unflagged bids, used to balance overall supply and demand, are counted separately and not shown as curtailment.</li>
+      <li><strong>Paid</strong> is that unit's bid cashflow in £, multiplied by the flagged share of its bid volume in each half-hour. Elexon publishes cashflow per unit per half-hour, not per instruction, so this split is an approximation. Positive means the grid paid the wind farm to reduce output.</li>
+      <li>Only units Elexon classifies as wind are included.</li>
       <li>Where Elexon publishes a revised figure for a half-hour, only the latest version is used.</li>
       <li>Settlement days run midnight to midnight UK time, so clock-change days have 46 or 50 half-hours.</li>
     </ul>
@@ -60,7 +60,7 @@
   <section>
     <h2>Checks before publishing</h2>
     <ul>
-      <li><strong>Volume cross-check:</strong> our daily GB wind turn-down totals are compared with an independent tracker. If the total over the comparison window differs by more than 10%, nothing is published.</li>
+      <li><strong>Annual check (the publish gate):</strong> our calendar-year totals are compared with Montel's published figures for wind curtailment, for all of Great Britain and for northern Scotland. If either differs by more than 10%, nothing is published.</li>
       <li><strong>Monthly reconciliation:</strong> where published monthly figures exist, our totals must agree within 10%.</li>
       <li><strong>Sign check:</strong> a month where wind farms are, on balance, paying the grid is flagged for investigation.</li>
     </ul>

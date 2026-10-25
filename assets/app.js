@@ -113,12 +113,15 @@
   }
 
   function renderChecks(d) {
-    var c = d.checks, ul = $("checks-list");
-    var v = c.volume_crosscheck, m = c.mapping;
+    var c = d.checks, ul = $("checks-list"), m = c.mapping;
+    var label = { wind_curtailed_mwh_all: "all GB wind", wind_curtailed_mwh_north_of_B4: "north of B4" };
+    var parts = (c.annual_check || []).map(function (a) {
+      return label[a.metric] + " " + a.year + ": ours " + a.ours_twh + " TWh, published " + a.theirs_twh +
+        " TWh (" + (a.delta_pct > 0 ? "+" : "") + a.delta_pct + "%)";
+    });
     var items = [
-      "Daily GB wind turn-down volumes are compared with an independent tracker over " + v.days +
-        " days: ours " + v.ours_gwh + " GWh, theirs " + v.theirs_gwh + " GWh (" + (v.delta_pct > 0 ? "+" : "") +
-        v.delta_pct + "%). Nothing is published if the gap exceeds 10%.",
+      "Our annual totals are checked against Montel's published figures. " + parts.join("; ") +
+        ". Nothing is published if either differs by more than 10%.",
       "Boundary zones are assigned to " + m.scottish_units + " Scottish wind units; " + m.verified +
         " are verified against grid connection records so far. Treat zone splits as provisional.",
       "Every figure is computed from Elexon settlement data by deterministic code. No figure on this page is estimated or written by AI."
@@ -128,8 +131,8 @@
   }
 
   function emptyState() {
-    showStatus("First figures publish here once the data passes its checks. The engine is backfilling 12 months of Elexon data now.");
-    $("checks-list").innerHTML = "<li>Figures appear only after Spillway's totals agree with an independent tracker within 10%.</li>";
+    showStatus("First figures publish here once the data passes its checks. The engine is backfilling Elexon data from January 2025 now.");
+    $("checks-list").innerHTML = "<li>Figures appear only after Spillway's annual totals agree with Montel's published figures within 10%.</li>";
     $("updated").textContent = "No published data yet.";
     $("chart").textContent = "";
   }
