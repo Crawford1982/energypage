@@ -3,71 +3,134 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spillway: Scotland's wasted wind</title>
-<meta name="description" content="How much Scottish wind power is paid to switch off, by grid boundary and wind farm. Updated daily from Elexon and NESO open data.">
-<meta property="og:title" content="Spillway: Scotland's wasted wind">
-<meta property="og:description" content="How much Scottish wind power is paid to switch off, updated daily.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b6e75'/%3E%3Cpath d='M6 12h20M6 17c4 0 4 3 8 3s4-3 8-3 4 3 4 3M6 23c4 0 4 3 8 3s4-3 8-3' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<title>Spillway: where Scotland's wind is switched off</title>
+<meta name="description" content="Scotland pays wind farms to stop generating when the grid can't carry their power south. Spillway tracks where, when and how often, from Elexon and NESO open data.">
+<meta property="og:title" content="Spillway: where Scotland's wind is switched off">
+<meta property="og:description" content="Where, when and how often Scottish wind is curtailed, from open grid data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b6e75'/%3E%3Cpath d='M9 5v9l7 5 7-5V5' stroke='white' stroke-width='2.6' fill='none' stroke-linejoin='round'/%3E%3Cpath d='M16 19v8M16 23h7' stroke='%23e0a51a' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header class="top">
   <a class="mark" href="./" aria-label="Spillway home">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7"/><path d="M6 12h20M6 17c4 0 4 3 8 3s4-3 8-3 4 3 4 3M6 23c4 0 4 3 8 3s4-3 8-3"/></svg>
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" class="mk-bg"/><path d="M9 5v9l7 5 7-5V5" class="mk-flow"/><path d="M16 19v8M16 23h7" class="mk-spill"/></svg>
     <span>Spillway</span>
   </a>
-  <nav><a href="./" aria-current="page">Tracker</a><a href="methodology.html">Methodology</a></nav>
+  <nav><a href="./" aria-current="page">Tracker</a><a href="methodology.html">Methodology</a><a href="#assessment">Location assessments</a></nav>
 </header>
 
 <main>
   <section class="hero">
-    <p class="kicker" id="kicker">Scotland's wasted wind</p>
-    <h1><span class="big" id="hero-gwh">—</span> <span class="unit">GWh</span></h1>
-    <p class="lede" id="hero-lede">of Scottish wind power was paid to switch off in the last 7 days.</p>
-    <dl class="hero-stats">
-      <div><dt>Paid to wind farms, 7 days</dt><dd id="hero-gbp">—</dd></div>
-      <div><dt>Switched off, 30 days</dt><dd id="m30-gwh">—</dd></div>
-      <div><dt>Paid, 30 days</dt><dd id="m30-gbp">—</dd></div>
-    </dl>
-    <p class="status" id="status" hidden></p>
+    <div class="hero-text">
+      <h1>Scotland pays its wind farms to stop generating. Spillway shows where, when and how often.</h1>
+      <p class="lede">The grid can't carry all of Scotland's wind power south. When a bottleneck is full, the grid operator pays farms behind it to switch off, and pays gas plants elsewhere to make up the gap.</p>
+
+      <div class="live-stats" data-live hidden>
+        <p class="live-kicker" id="kicker">Last 7 days</p>
+        <p class="live-figure"><span id="hero-gwh">0</span> GWh <span class="live-figure-sub">of Scottish wind switched off</span></p>
+        <dl class="hero-stats">
+          <div><dt>Paid to wind farms, 7 days</dt><dd id="hero-gbp"></dd></div>
+          <div><dt>Switched off, 30 days</dt><dd id="m30-gwh"></dd></div>
+          <div><dt>Paid, 30 days</dt><dd id="m30-gbp"></dd></div>
+        </dl>
+      </div>
+
+      <div class="prelaunch" data-prelaunch>
+        <p class="status"><strong>The live tracker is being checked.</strong> Spillway's figures come from Elexon settlement data. They publish here once our 2025 totals agree with Montel's published figures to within 10%.</p>
+      </div>
+    </div>
+
+    <figure class="schematic">
+      <svg viewBox="0 0 340 500" role="img" aria-labelledby="sch-title sch-desc">
+        <title id="sch-title">How Scottish wind is switched off</title>
+        <desc id="sch-desc">A simplified line diagram. Wind power in the north of Scotland flows south through the B4 boundary to the Central Belt, then through the B6 boundary to England. Each boundary has limited capacity, so some wind is switched off at each one, more at B4.</desc>
+        <defs>
+          <marker id="arr-spill" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><path d="M0 0L10 5L0 10z" class="spill-head"/></marker>
+          <marker id="arr-flow" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" orient="auto"><path d="M0 0L10 5L0 10z" class="flow-head"/></marker>
+          <g id="turbine"><line x1="0" y1="0" x2="0" y2="22" class="tb-pole"/><path d="M0 0 L0 -13 M0 0 L11 6.5 M0 0 L-11 6.5" class="tb-blade"/></g>
+        </defs>
+
+        <!-- zones -->
+        <rect x="20" y="40" width="200" height="120" rx="4" class="zone z-north"/>
+        <text x="32" y="64" class="zl">North of B4</text>
+        <text x="32" y="82" class="zs">Highlands, islands, Moray,</text>
+        <text x="32" y="97" class="zs">Aberdeenshire, Argyll</text>
+        <use href="#turbine" x="62" y="122"/><use href="#turbine" x="102" y="128"/><use href="#turbine" x="142" y="120"/><use href="#turbine" x="182" y="126"/>
+
+        <rect x="20" y="230" width="200" height="110" rx="4" class="zone z-mid"/>
+        <text x="32" y="254" class="zl">Central Belt and south</text>
+        <text x="32" y="272" class="zs">Lothians, Lanarkshire, Ayrshire,</text>
+        <text x="32" y="287" class="zs">Borders, Dumfries and Galloway</text>
+        <use href="#turbine" x="72" y="314"/><use href="#turbine" x="122" y="310"/>
+
+        <rect x="20" y="410" width="200" height="60" rx="4" class="zone z-eng"/>
+        <text x="32" y="436" class="zl">England</text>
+        <text x="32" y="454" class="zs">Most of Britain's demand</text>
+
+        <!-- flow: wide in the north, squeezed at each boundary -->
+        <path d="M120 160 L120 230" class="flow f-wide-narrow"/>
+        <path d="M120 340 L120 404" class="flow f-mid" marker-end="url(#arr-flow)"/>
+
+        <!-- boundaries -->
+        <line x1="8" y1="195" x2="232" y2="195" class="boundary"/>
+        <text x="12" y="188" class="bl">B4</text>
+        <line x1="8" y1="375" x2="232" y2="375" class="boundary"/>
+        <text x="12" y="368" class="bl">B6</text>
+
+        <!-- spills -->
+        <path d="M128 195 C 190 195, 230 200, 262 228" class="spill s-big" marker-end="url(#arr-spill)"/>
+        <path d="M128 375 C 185 375, 220 380, 252 400" class="spill s-small" marker-end="url(#arr-spill)"/>
+        <text x="244" y="250" class="sl">Switched off</text>
+        <text x="244" y="266" class="ss">farms paid</text>
+        <text x="244" y="282" class="ss">not to generate</text>
+      </svg>
+      <figcaption>Simplified. The B4 and B6 boundaries limit how much power can flow south. Line widths are illustrative, not to scale.</figcaption>
+    </figure>
   </section>
 
-  <section class="zones" aria-labelledby="zones-h">
-    <h2 id="zones-h">Where the wind was wasted</h2>
-    <p class="section-lede">Power curtailed behind a grid bottleneck can only be used by demand behind the same bottleneck. Scotland has two: B4 (north of the Central Belt) and B6 (the border).</p>
+  <section class="facts" aria-labelledby="facts-h" data-prelaunch>
+    <h2 id="facts-h">Why it matters</h2>
+    <ul class="fact-list">
+      <li><span class="fact">£1.5bn</span> paid to switch off wind farms and fire up gas instead, across Britain in 2026 by early October, already more than all of 2025. <a href="https://octopus.energy/britain-hits-pound1-5bn-wasted-wind-bill-three-months-earlier-than-in-2025/">Octopus Energy, Wasted Wind tracker</a></li>
+      <li><span class="fact">39%</span> of the wind power northern Scotland could have generated in 2025 was switched off, 8.8 TWh in all. <a href="https://www.energyvoice.com/renewables-energy-transition/wind/uk-wind/590566/scottish-wind-curtailment-costs-hit-343m-in-2025-as-grid-constraints-worsened-report-finds/">Montel, reported by Energy Voice</a></li>
+      <li><span class="fact">Late 2020s</span> before the transmission upgrades that relieve the bottlenecks arrive. Until then, demand that can sit behind them and use spare power has real value. <a href="https://modoenergy.com/research/gb-great-britain-battery-energy-storage-curtailment-wind-constraint-scotland-costs">Modo Energy</a></li>
+    </ul>
+  </section>
+
+  <section class="zones" aria-labelledby="zones-h" data-live hidden>
+    <h2 id="zones-h">Where the wind was switched off, last 30 days</h2>
+    <p class="section-lede">Power curtailed behind a bottleneck can only be used by demand behind the same bottleneck, so the two zones are counted separately.</p>
     <div class="zone-grid">
-      <article class="zone z-north">
+      <article class="zone-card z-north">
         <h3>North of B4</h3>
-        <p class="zone-sub">Highlands, islands, Moray, Aberdeenshire, Argyll, Perthshire</p>
         <dl>
-          <div><dt>Switched off, 30 days</dt><dd data-z="north_of_B4" data-k="mwh">—</dd></div>
-          <div><dt>Paid</dt><dd data-z="north_of_B4" data-k="gbp">—</dd></div>
-          <div><dt>Average paid per MWh</dt><dd data-z="north_of_B4" data-k="gbp_per_mwh">—</dd></div>
+          <div><dt>Switched off</dt><dd data-z="north_of_B4" data-k="mwh"></dd></div>
+          <div><dt>Paid</dt><dd data-z="north_of_B4" data-k="gbp"></dd></div>
+          <div><dt>Average paid per MWh</dt><dd data-z="north_of_B4" data-k="gbp_per_mwh"></dd></div>
         </dl>
       </article>
-      <article class="zone z-mid">
+      <article class="zone-card z-mid">
         <h3>Between B4 and B6</h3>
-        <p class="zone-sub">Central Belt, Lothians, Lanarkshire, Ayrshire, Borders, Dumfries &amp; Galloway</p>
         <dl>
-          <div><dt>Switched off, 30 days</dt><dd data-z="B4_to_B6" data-k="mwh">—</dd></div>
-          <div><dt>Paid</dt><dd data-z="B4_to_B6" data-k="gbp">—</dd></div>
-          <div><dt>Average paid per MWh</dt><dd data-z="B4_to_B6" data-k="gbp_per_mwh">—</dd></div>
+          <div><dt>Switched off</dt><dd data-z="B4_to_B6" data-k="mwh"></dd></div>
+          <div><dt>Paid</dt><dd data-z="B4_to_B6" data-k="gbp"></dd></div>
+          <div><dt>Average paid per MWh</dt><dd data-z="B4_to_B6" data-k="gbp_per_mwh"></dd></div>
         </dl>
       </article>
     </div>
   </section>
 
-  <section aria-labelledby="chart-h">
+  <section aria-labelledby="chart-h" data-live hidden>
     <h2 id="chart-h">Wind switched off each day, last 90 days</h2>
     <div class="legend"><span class="key k-north"></span>North of B4 <span class="key k-mid"></span>Between B4 and B6</div>
-    <div id="chart" class="chart" role="img" aria-label="Daily curtailed wind energy in Scotland by boundary zone"></div>
+    <div id="chart" class="chart" role="img" aria-label="Daily curtailed wind energy in Scotland by zone"></div>
     <p class="chart-note" id="chart-note"></p>
   </section>
 
-  <section aria-labelledby="sites-h">
+  <section aria-labelledby="sites-h" data-live hidden>
     <h2 id="sites-h">Most-curtailed wind farms, last 30 days</h2>
     <div class="table-wrap">
       <table id="sites">
@@ -75,18 +138,34 @@
         <tbody></tbody>
       </table>
     </div>
-    <p class="fine">Negative payments are real: some farms (often on Contracts for Difference) bid to pay the grid when they're turned down, rather than be paid. <a href="methodology.html#negative">Why</a>.</p>
+    <p class="fine">Negative payments are real: some farms, often on Contracts for Difference, pay the grid when they're turned down instead of being paid. <a href="methodology.html#negative">Why this happens</a></p>
   </section>
 
-  <section class="checks" aria-labelledby="checks-h">
-    <h2 id="checks-h">How we check these numbers</h2>
-    <ul id="checks-list"><li>Loading…</li></ul>
+  <section class="checks" aria-labelledby="checks-h" data-live hidden>
+    <h2 id="checks-h">How these numbers are checked</h2>
+    <ul id="checks-list"></ul>
+  </section>
+
+  <section class="offer" id="assessment" aria-labelledby="offer-h">
+    <div class="offer-text">
+      <h2 id="offer-h">Comparing sites for flexible demand?</h2>
+      <p>A Spillway location assessment compares up to three candidate sites using the historical record, so you can decide which deserve further development spend.</p>
+      <ul class="offer-list">
+        <li>Which grid zone each site sits in, and how confident that mapping is</li>
+        <li>How often curtailment happens behind its bottleneck, for how long, and in which months and hours</li>
+        <li>Whether the site falls inside a NESO demand flexibility catchment</li>
+        <li>Planned network changes that could shrink the opportunity</li>
+        <li>What the evidence doesn't establish, and the questions an engineering study needs to answer</li>
+      </ul>
+      <p><a class="button" href="mailto:hello@spillway.energy?subject=Location%20assessment">Ask about an assessment</a></p>
+      <p class="fine">Historical analysis, not a connection study or revenue forecast.</p>
+    </div>
   </section>
 </main>
 
 <footer>
-  <p id="updated">Data loading…</p>
-  <p id="attribution">Contains BMRS data © Elexon Limited copyright and database right 2026 (<a href="https://www.elexon.co.uk/data/balancing-mechanism-reporting-agent/copyright-licence-bmrs-data/">BMRS licence</a>). Supported by National Energy SO Open Data (<a href="https://www.neso.energy/data-portal/ngeso-open-licence">NESO Open Data Licence</a>).</p>
+  <p id="updated"></p>
+  <p>Contains BMRS data © Elexon Limited copyright and database right 2026 (<a href="https://www.elexon.co.uk/data/balancing-mechanism-reporting-agent/copyright-licence-bmrs-data/">BMRS licence</a>). Supported by National Energy SO Open Data (<a href="https://www.neso.energy/data-portal/ngeso-open-licence">NESO Open Data Licence</a>). Spillway is independent and not affiliated with Elexon or NESO.</p>
   <p><a href="methodology.html">Methodology and limitations</a></p>
 </footer>
 <script src="assets/app.js" defer></script>

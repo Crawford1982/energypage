@@ -32,11 +32,14 @@
     return e;
   }
 
-  function showStatus(msg) { var s = $("status"); s.textContent = msg; s.hidden = false; }
+  function setMode(live) {
+    document.querySelectorAll("[data-live]").forEach(function (n) { n.hidden = !live; });
+    document.querySelectorAll("[data-prelaunch]").forEach(function (n) { n.hidden = live; });
+  }
 
   function renderHero(d) {
     var w7 = d.windows["7d"], w30 = d.windows["30d"];
-    $("kicker").textContent = "Scotland's wasted wind · 7 days to " + longDate(d.data_through);
+    $("kicker").textContent = "7 days to " + longDate(d.data_through);
     $("hero-gwh").textContent = gwh(w7.scotland.mwh);
     $("hero-gbp").textContent = money(w7.scotland.gbp);
     $("m30-gwh").textContent = gwh(w30.scotland.mwh) + " GWh";
@@ -148,15 +151,14 @@
   }
 
   function emptyState() {
-    showStatus("First figures publish here once the data passes its checks. The engine is backfilling Elexon data from January 2025 now.");
-    $("checks-list").innerHTML = "<li>Figures appear only after Spillway's annual totals agree with Montel's published figures within 10%.</li>";
-    $("updated").textContent = "No published data yet.";
-    $("chart").textContent = "";
+    setMode(false);
+    $("updated").textContent = "Live figures are not published yet.";
   }
 
   fetch("data/latest.json?v=" + new Date().toISOString().slice(0, 13), { cache: "no-store" })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (d) {
+      setMode(true);
       renderHero(d); renderZones(d); renderChart(d); renderSites(d); renderChecks(d);
       $("updated").textContent = "Data through " + longDate(d.data_through) + ". Updated daily.";
     })
