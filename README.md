@@ -6,4 +6,4 @@ Static tracker for Scotland's wasted wind, served by GitHub Pages at https://spi
 - `data/latest.json`: written only by the private Spillway engine's daily run, and only when its
   checks pass. Never edit it by hand.
 
-BMRS data © Elexon Limited copyright and database right. Supported by National Energy SO Open Data.
+Contains BMRS data © Elexon Limited copyright and database right 2026. Supported by National Energy SO Open Data.

@@ -114,14 +114,20 @@
 
   function renderChecks(d) {
     var c = d.checks, ul = $("checks-list"), m = c.mapping;
-    var label = { wind_curtailed_mwh_all: "all GB wind", wind_curtailed_mwh_north_of_B4: "north of B4" };
+    var label = {
+      wind_curtailed_mwh_all: "GB wind switched off", wind_curtailed_mwh_north_of_B4: "north of B4 switched off",
+      wind_payment_gbp_all: "GB payments", wind_payment_gbp_scotland: "Scottish payments",
+      wind_payment_gbp_north_of_B4: "north of B4 payments"
+    };
+    var fmt = function (v, u) { return u === "TWh" ? v.toFixed(2) + " TWh" : "£" + Math.round(v) + "m"; };
     var parts = (c.annual_check || []).map(function (a) {
-      return label[a.metric] + " " + a.year + ": ours " + a.ours_twh + " TWh, published " + a.theirs_twh +
-        " TWh (" + (a.delta_pct > 0 ? "+" : "") + a.delta_pct + "%)";
+      return label[a.metric] + ": ours " + fmt(a.ours, a.unit) + ", Montel " + fmt(a.theirs, a.unit) +
+        " (" + (a.delta_pct > 0 ? "+" : "") + a.delta_pct + "%)";
     });
+    var year = (c.annual_check && c.annual_check[0]) ? c.annual_check[0].year : "";
     var items = [
-      "Our annual totals are checked against Montel's published figures. " + parts.join("; ") +
-        ". Nothing is published if either differs by more than 10%.",
+      "Our " + year + " totals are checked against Montel's published figures. " + parts.join("; ") +
+        ". Nothing is published if any differs by more than 10%.",
       "Boundary zones are assigned to " + m.scottish_units + " Scottish wind units; " + m.verified +
         " are verified against grid connection records so far. Treat zone splits as provisional.",
       "Every figure is computed from Elexon settlement data by deterministic code. No figure on this page is estimated or written by AI."
@@ -142,7 +148,6 @@
     .then(function (d) {
       renderHero(d); renderZones(d); renderChart(d); renderSites(d); renderChecks(d);
       $("updated").textContent = "Data through " + longDate(d.data_through) + ". Updated daily.";
-      if (d.attribution) $("attribution").textContent = d.attribution.join(". ") + ".";
     })
     .catch(emptyState);
 })();
