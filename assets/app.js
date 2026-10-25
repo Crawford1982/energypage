@@ -58,7 +58,7 @@
     var W = Math.max(320, Math.round(box.clientWidth || 960)), H = W < 600 ? 220 : 280;
     var L = 40, R = 6, T = 26, B = 26, labelEvery = W < 600 ? 30 : 15;
     var max = 0;
-    rows.forEach(function (r) { max = Math.max(max, r.north_of_B4_mwh + r.B4_to_B6_mwh); });
+    rows.forEach(function (r) { if (r.complete) max = Math.max(max, r.north_of_B4_mwh + r.B4_to_B6_mwh); });
     if (max === 0) { box.textContent = "No curtailment in this period."; return; }
     var stepG = [10, 20, 25, 50, 100, 200, 250, 500].find(function (s) { return max / 1000 / s <= 5; }) || 1000;
     var top = Math.ceil(max / 1000 / stepG) * stepG;
@@ -76,6 +76,15 @@
 
     rows.forEach(function (r, i) {
       var x = L + i * bw + bw * 0.12, w = bw * 0.76, base = 0;
+      if (!r.complete) {
+        // Incomplete data is shown as a gap with a marker, never as a zero day.
+        var gap = el("g", {});
+        gap.appendChild(el("title", {}, shortDate(r.date) + ": data incomplete, not shown"));
+        gap.appendChild(el("rect", { x: x, width: w, y: y(0) - 3, height: 3, "class": "b-gap" }));
+        svg.appendChild(gap);
+        if (i % labelEvery === 0) svg.appendChild(el("text", { x: x + w / 2, y: H - 6, "text-anchor": "middle", "class": "tick" }, shortDate(r.date)));
+        return;
+      }
       var tip = shortDate(r.date) + ": " + mwhText(r.north_of_B4_mwh + r.B4_to_B6_mwh) + " (" +
         "north of B4 " + mwhText(r.north_of_B4_mwh) + ", B4 to B6 " + mwhText(r.B4_to_B6_mwh) + "), paid " +
         money(r.north_of_B4_gbp + r.B4_to_B6_gbp);
@@ -92,7 +101,9 @@
     });
     box.innerHTML = "";
     box.appendChild(svg);
-    $("chart-note").textContent = "Hover a bar for that day's figures. Data through " + longDate(d.data_through) + ".";
+    var gaps = rows.filter(function (r) { return !r.complete; }).length;
+    $("chart-note").textContent = "Hover a bar for that day's figures. Data through " + longDate(d.data_through) + "." +
+      (gaps ? " " + gaps + " day" + (gaps > 1 ? "s" : "") + " with incomplete source data are marked as gaps, not zero." : "");
   }
 
   function renderSites(d) {

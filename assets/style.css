@@ -70,6 +70,7 @@ dd { margin: 2px 0 0; font: 500 22px/1.2 var(--mono); font-variant-numeric: tabu
 .chart .axis text, .chart .tick { fill: var(--ink-2); font: 12px var(--sans); }
 .chart .grid { stroke: var(--rule); }
 .chart .b-north { fill: var(--north); } .chart .b-mid { fill: var(--mid); }
+.chart .b-gap { fill: var(--warn); opacity: 0.6; }
 .chart rect:hover { opacity: 0.75; }
 .chart-note, .fine { color: var(--ink-2); font-size: 14px; margin: 12px 0 0; }
 
