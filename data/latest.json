@@ -1,0 +1,943 @@
+{
+ "generated_at": "2026-10-27T21:06:55Z",
+ "data_through": "2026-10-26",
+ "windows": {
+  "7d": {
+   "start": "2026-10-20",
+   "end": "2026-10-26",
+   "scotland": {
+    "mwh": 526772.7,
+    "gbp": 15204540
+   },
+   "zones": {
+    "north_of_B4": {
+     "mwh": 431278.9,
+     "gbp": 10557133,
+     "units": 68,
+     "gbp_per_mwh": 24.48
+    },
+    "B4_to_B6": {
+     "mwh": 95493.8,
+     "gbp": 4647407,
+     "units": 49,
+     "gbp_per_mwh": 48.67
+    }
+   }
+  },
+  "30d": {
+   "start": "2026-09-27",
+   "end": "2026-10-26",
+   "scotland": {
+    "mwh": 1931780.8,
+    "gbp": 53359722
+   },
+   "zones": {
+    "north_of_B4": {
+     "mwh": 1559341.9,
+     "gbp": 34086778,
+     "units": 71,
+     "gbp_per_mwh": 21.86
+    },
+    "B4_to_B6": {
+     "mwh": 372438.9,
+     "gbp": 19272944,
+     "units": 56,
+     "gbp_per_mwh": 51.75
+    }
+   }
+  }
+ },
+ "daily": [
+  {
+   "date": "2026-07-29",
+   "complete": true,
+   "north_of_B4_mwh": 10505.2,
+   "north_of_B4_gbp": 125849,
+   "B4_to_B6_mwh": 28.4,
+   "B4_to_B6_gbp": 1945
+  },
+  {
+   "date": "2026-07-30",
+   "complete": true,
+   "north_of_B4_mwh": 14901.4,
+   "north_of_B4_gbp": 158833,
+   "B4_to_B6_mwh": 7065.8,
+   "B4_to_B6_gbp": 384888
+  },
+  {
+   "date": "2026-07-31",
+   "complete": true,
+   "north_of_B4_mwh": 1880.1,
+   "north_of_B4_gbp": -16299,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-01",
+   "complete": true,
+   "north_of_B4_mwh": 2280.1,
+   "north_of_B4_gbp": -3920,
+   "B4_to_B6_mwh": 872.6,
+   "B4_to_B6_gbp": 49568
+  },
+  {
+   "date": "2026-08-02",
+   "complete": true,
+   "north_of_B4_mwh": 0.0,
+   "north_of_B4_gbp": 0,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-03",
+   "complete": true,
+   "north_of_B4_mwh": 957.3,
+   "north_of_B4_gbp": 985,
+   "B4_to_B6_mwh": 62.1,
+   "B4_to_B6_gbp": 701
+  },
+  {
+   "date": "2026-08-04",
+   "complete": true,
+   "north_of_B4_mwh": 33420.8,
+   "north_of_B4_gbp": 294153,
+   "B4_to_B6_mwh": 5748.2,
+   "B4_to_B6_gbp": 220632
+  },
+  {
+   "date": "2026-08-05",
+   "complete": true,
+   "north_of_B4_mwh": 18057.6,
+   "north_of_B4_gbp": 431085,
+   "B4_to_B6_mwh": 12780.9,
+   "B4_to_B6_gbp": 733610
+  },
+  {
+   "date": "2026-08-06",
+   "complete": true,
+   "north_of_B4_mwh": 16681.3,
+   "north_of_B4_gbp": 339065,
+   "B4_to_B6_mwh": 5152.4,
+   "B4_to_B6_gbp": 311976
+  },
+  {
+   "date": "2026-08-07",
+   "complete": true,
+   "north_of_B4_mwh": 51802.1,
+   "north_of_B4_gbp": 1269243,
+   "B4_to_B6_mwh": 2022.4,
+   "B4_to_B6_gbp": 111458
+  },
+  {
+   "date": "2026-08-08",
+   "complete": true,
+   "north_of_B4_mwh": 71353.2,
+   "north_of_B4_gbp": 1972748,
+   "B4_to_B6_mwh": 2602.7,
+   "B4_to_B6_gbp": 85367
+  },
+  {
+   "date": "2026-08-09",
+   "complete": true,
+   "north_of_B4_mwh": 28893.6,
+   "north_of_B4_gbp": 260783,
+   "B4_to_B6_mwh": 289.7,
+   "B4_to_B6_gbp": 6881
+  },
+  {
+   "date": "2026-08-10",
+   "complete": true,
+   "north_of_B4_mwh": 11164.0,
+   "north_of_B4_gbp": 33629,
+   "B4_to_B6_mwh": 12.6,
+   "B4_to_B6_gbp": 193
+  },
+  {
+   "date": "2026-08-11",
+   "complete": true,
+   "north_of_B4_mwh": 7053.5,
+   "north_of_B4_gbp": -64591,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-12",
+   "complete": true,
+   "north_of_B4_mwh": 8561.7,
+   "north_of_B4_gbp": 70332,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-13",
+   "complete": true,
+   "north_of_B4_mwh": 0.0,
+   "north_of_B4_gbp": 0,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-14",
+   "complete": true,
+   "north_of_B4_mwh": 609.9,
+   "north_of_B4_gbp": -6203,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-15",
+   "complete": true,
+   "north_of_B4_mwh": 6592.7,
+   "north_of_B4_gbp": 31852,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-16",
+   "complete": true,
+   "north_of_B4_mwh": 0.0,
+   "north_of_B4_gbp": 0,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-17",
+   "complete": true,
+   "north_of_B4_mwh": 2070.2,
+   "north_of_B4_gbp": -79034,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-18",
+   "complete": true,
+   "north_of_B4_mwh": 8361.5,
+   "north_of_B4_gbp": -77520,
+   "B4_to_B6_mwh": 825.3,
+   "B4_to_B6_gbp": 1550
+  },
+  {
+   "date": "2026-08-19",
+   "complete": true,
+   "north_of_B4_mwh": 4828.0,
+   "north_of_B4_gbp": -128121,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-20",
+   "complete": true,
+   "north_of_B4_mwh": 25596.0,
+   "north_of_B4_gbp": -165267,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-21",
+   "complete": true,
+   "north_of_B4_mwh": 15883.2,
+   "north_of_B4_gbp": -111110,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-22",
+   "complete": true,
+   "north_of_B4_mwh": 1294.9,
+   "north_of_B4_gbp": -20489,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-23",
+   "complete": true,
+   "north_of_B4_mwh": 0.0,
+   "north_of_B4_gbp": 0,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-24",
+   "complete": true,
+   "north_of_B4_mwh": 5693.7,
+   "north_of_B4_gbp": -189666,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-25",
+   "complete": true,
+   "north_of_B4_mwh": 2030.5,
+   "north_of_B4_gbp": -46775,
+   "B4_to_B6_mwh": 50.6,
+   "B4_to_B6_gbp": 796
+  },
+  {
+   "date": "2026-08-26",
+   "complete": true,
+   "north_of_B4_mwh": 7953.3,
+   "north_of_B4_gbp": -102271,
+   "B4_to_B6_mwh": 1158.3,
+   "B4_to_B6_gbp": 32452
+  },
+  {
+   "date": "2026-08-27",
+   "complete": true,
+   "north_of_B4_mwh": 11.5,
+   "north_of_B4_gbp": -102,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-28",
+   "complete": true,
+   "north_of_B4_mwh": 15792.3,
+   "north_of_B4_gbp": -15749,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-29",
+   "complete": true,
+   "north_of_B4_mwh": 3517.1,
+   "north_of_B4_gbp": 52529,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-30",
+   "complete": true,
+   "north_of_B4_mwh": 0.0,
+   "north_of_B4_gbp": 0,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-08-31",
+   "complete": true,
+   "north_of_B4_mwh": 859.6,
+   "north_of_B4_gbp": 17278,
+   "B4_to_B6_mwh": 618.2,
+   "B4_to_B6_gbp": 14691
+  },
+  {
+   "date": "2026-09-01",
+   "complete": true,
+   "north_of_B4_mwh": 44014.6,
+   "north_of_B4_gbp": 712132,
+   "B4_to_B6_mwh": 8782.3,
+   "B4_to_B6_gbp": 407402
+  },
+  {
+   "date": "2026-09-02",
+   "complete": true,
+   "north_of_B4_mwh": 4424.9,
+   "north_of_B4_gbp": -48432,
+   "B4_to_B6_mwh": 453.8,
+   "B4_to_B6_gbp": 10041
+  },
+  {
+   "date": "2026-09-03",
+   "complete": true,
+   "north_of_B4_mwh": 47026.6,
+   "north_of_B4_gbp": 940057,
+   "B4_to_B6_mwh": 11131.8,
+   "B4_to_B6_gbp": 701449
+  },
+  {
+   "date": "2026-09-04",
+   "complete": true,
+   "north_of_B4_mwh": 82674.3,
+   "north_of_B4_gbp": 2898928,
+   "B4_to_B6_mwh": 40296.2,
+   "B4_to_B6_gbp": 2305966
+  },
+  {
+   "date": "2026-09-05",
+   "complete": true,
+   "north_of_B4_mwh": 60058.0,
+   "north_of_B4_gbp": 2376413,
+   "B4_to_B6_mwh": 18307.5,
+   "B4_to_B6_gbp": 1175518
+  },
+  {
+   "date": "2026-09-06",
+   "complete": true,
+   "north_of_B4_mwh": 60153.3,
+   "north_of_B4_gbp": 1447449,
+   "B4_to_B6_mwh": 7776.3,
+   "B4_to_B6_gbp": 249745
+  },
+  {
+   "date": "2026-09-07",
+   "complete": true,
+   "north_of_B4_mwh": 64467.2,
+   "north_of_B4_gbp": 555859,
+   "B4_to_B6_mwh": 6157.7,
+   "B4_to_B6_gbp": 140877
+  },
+  {
+   "date": "2026-09-08",
+   "complete": true,
+   "north_of_B4_mwh": 93382.5,
+   "north_of_B4_gbp": 2145690,
+   "B4_to_B6_mwh": 24357.1,
+   "B4_to_B6_gbp": 1061290
+  },
+  {
+   "date": "2026-09-09",
+   "complete": true,
+   "north_of_B4_mwh": 13263.6,
+   "north_of_B4_gbp": 85260,
+   "B4_to_B6_mwh": 22.2,
+   "B4_to_B6_gbp": 1515
+  },
+  {
+   "date": "2026-09-10",
+   "complete": true,
+   "north_of_B4_mwh": 40666.2,
+   "north_of_B4_gbp": -119109,
+   "B4_to_B6_mwh": 3809.0,
+   "B4_to_B6_gbp": 34210
+  },
+  {
+   "date": "2026-09-11",
+   "complete": true,
+   "north_of_B4_mwh": 24137.2,
+   "north_of_B4_gbp": -185486,
+   "B4_to_B6_mwh": 42.5,
+   "B4_to_B6_gbp": -3256
+  },
+  {
+   "date": "2026-09-12",
+   "complete": true,
+   "north_of_B4_mwh": 64402.7,
+   "north_of_B4_gbp": 1589000,
+   "B4_to_B6_mwh": 17310.4,
+   "B4_to_B6_gbp": 768141
+  },
+  {
+   "date": "2026-09-13",
+   "complete": true,
+   "north_of_B4_mwh": 0.0,
+   "north_of_B4_gbp": 0,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-09-14",
+   "complete": true,
+   "north_of_B4_mwh": 4526.9,
+   "north_of_B4_gbp": -202179,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-09-15",
+   "complete": true,
+   "north_of_B4_mwh": 24914.6,
+   "north_of_B4_gbp": 22523,
+   "B4_to_B6_mwh": 1496.5,
+   "B4_to_B6_gbp": -13907
+  },
+  {
+   "date": "2026-09-16",
+   "complete": true,
+   "north_of_B4_mwh": 22772.6,
+   "north_of_B4_gbp": 87044,
+   "B4_to_B6_mwh": 2064.4,
+   "B4_to_B6_gbp": 96380
+  },
+  {
+   "date": "2026-09-17",
+   "complete": true,
+   "north_of_B4_mwh": 92236.7,
+   "north_of_B4_gbp": 2730254,
+   "B4_to_B6_mwh": 19552.3,
+   "B4_to_B6_gbp": 955706
+  },
+  {
+   "date": "2026-09-18",
+   "complete": true,
+   "north_of_B4_mwh": 93534.5,
+   "north_of_B4_gbp": 2724589,
+   "B4_to_B6_mwh": 20557.5,
+   "B4_to_B6_gbp": 1116593
+  },
+  {
+   "date": "2026-09-19",
+   "complete": true,
+   "north_of_B4_mwh": 103781.9,
+   "north_of_B4_gbp": 4543863,
+   "B4_to_B6_mwh": 30662.5,
+   "B4_to_B6_gbp": 2280992
+  },
+  {
+   "date": "2026-09-20",
+   "complete": true,
+   "north_of_B4_mwh": 86238.2,
+   "north_of_B4_gbp": 3830742,
+   "B4_to_B6_mwh": 16953.6,
+   "B4_to_B6_gbp": 1291781
+  },
+  {
+   "date": "2026-09-21",
+   "complete": true,
+   "north_of_B4_mwh": 13392.3,
+   "north_of_B4_gbp": -148488,
+   "B4_to_B6_mwh": 1698.7,
+   "B4_to_B6_gbp": 4054
+  },
+  {
+   "date": "2026-09-22",
+   "complete": true,
+   "north_of_B4_mwh": 13354.6,
+   "north_of_B4_gbp": -88211,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-09-23",
+   "complete": true,
+   "north_of_B4_mwh": 1633.2,
+   "north_of_B4_gbp": 10985,
+   "B4_to_B6_mwh": 691.1,
+   "B4_to_B6_gbp": 18826
+  },
+  {
+   "date": "2026-09-24",
+   "complete": true,
+   "north_of_B4_mwh": 39799.9,
+   "north_of_B4_gbp": 663792,
+   "B4_to_B6_mwh": 5144.9,
+   "B4_to_B6_gbp": 173768
+  },
+  {
+   "date": "2026-09-25",
+   "complete": true,
+   "north_of_B4_mwh": 43928.0,
+   "north_of_B4_gbp": 226670,
+   "B4_to_B6_mwh": 2754.8,
+   "B4_to_B6_gbp": 112733
+  },
+  {
+   "date": "2026-09-26",
+   "complete": true,
+   "north_of_B4_mwh": 64172.4,
+   "north_of_B4_gbp": 1363815,
+   "B4_to_B6_mwh": 20298.7,
+   "B4_to_B6_gbp": 897800
+  },
+  {
+   "date": "2026-09-27",
+   "complete": true,
+   "north_of_B4_mwh": 79700.6,
+   "north_of_B4_gbp": 2211399,
+   "B4_to_B6_mwh": 15018.4,
+   "B4_to_B6_gbp": 916949
+  },
+  {
+   "date": "2026-09-28",
+   "complete": true,
+   "north_of_B4_mwh": 22888.6,
+   "north_of_B4_gbp": -70254,
+   "B4_to_B6_mwh": 856.1,
+   "B4_to_B6_gbp": 28368
+  },
+  {
+   "date": "2026-09-29",
+   "complete": true,
+   "north_of_B4_mwh": 77990.3,
+   "north_of_B4_gbp": 2127203,
+   "B4_to_B6_mwh": 23209.4,
+   "B4_to_B6_gbp": 1132801
+  },
+  {
+   "date": "2026-09-30",
+   "complete": true,
+   "north_of_B4_mwh": 100097.1,
+   "north_of_B4_gbp": 2688772,
+   "B4_to_B6_mwh": 24129.2,
+   "B4_to_B6_gbp": 1197914
+  },
+  {
+   "date": "2026-10-01",
+   "complete": true,
+   "north_of_B4_mwh": 28730.7,
+   "north_of_B4_gbp": -114934,
+   "B4_to_B6_mwh": 2.5,
+   "B4_to_B6_gbp": -15
+  },
+  {
+   "date": "2026-10-02",
+   "complete": true,
+   "north_of_B4_mwh": 78799.8,
+   "north_of_B4_gbp": 610975,
+   "B4_to_B6_mwh": 13084.7,
+   "B4_to_B6_gbp": 486272
+  },
+  {
+   "date": "2026-10-03",
+   "complete": true,
+   "north_of_B4_mwh": 38170.8,
+   "north_of_B4_gbp": 52566,
+   "B4_to_B6_mwh": 2453.9,
+   "B4_to_B6_gbp": 81759
+  },
+  {
+   "date": "2026-10-04",
+   "complete": true,
+   "north_of_B4_mwh": 96948.2,
+   "north_of_B4_gbp": 2283099,
+   "B4_to_B6_mwh": 16024.2,
+   "B4_to_B6_gbp": 689952
+  },
+  {
+   "date": "2026-10-05",
+   "complete": true,
+   "north_of_B4_mwh": 90590.3,
+   "north_of_B4_gbp": 2222263,
+   "B4_to_B6_mwh": 18312.9,
+   "B4_to_B6_gbp": 908485
+  },
+  {
+   "date": "2026-10-06",
+   "complete": true,
+   "north_of_B4_mwh": 9885.8,
+   "north_of_B4_gbp": -138775,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-10-07",
+   "complete": true,
+   "north_of_B4_mwh": 1702.0,
+   "north_of_B4_gbp": -5061,
+   "B4_to_B6_mwh": 76.1,
+   "B4_to_B6_gbp": 3555
+  },
+  {
+   "date": "2026-10-08",
+   "complete": true,
+   "north_of_B4_mwh": 9649.7,
+   "north_of_B4_gbp": 67884,
+   "B4_to_B6_mwh": 2543.7,
+   "B4_to_B6_gbp": 109786
+  },
+  {
+   "date": "2026-10-09",
+   "complete": true,
+   "north_of_B4_mwh": 55045.3,
+   "north_of_B4_gbp": 1736041,
+   "B4_to_B6_mwh": 19253.7,
+   "B4_to_B6_gbp": 1297236
+  },
+  {
+   "date": "2026-10-10",
+   "complete": true,
+   "north_of_B4_mwh": 66761.6,
+   "north_of_B4_gbp": 3158686,
+   "B4_to_B6_mwh": 22183.1,
+   "B4_to_B6_gbp": 1723668
+  },
+  {
+   "date": "2026-10-11",
+   "complete": true,
+   "north_of_B4_mwh": 549.9,
+   "north_of_B4_gbp": -16533,
+   "B4_to_B6_mwh": 1907.4,
+   "B4_to_B6_gbp": 178924
+  },
+  {
+   "date": "2026-10-12",
+   "complete": true,
+   "north_of_B4_mwh": 64174.0,
+   "north_of_B4_gbp": 233755,
+   "B4_to_B6_mwh": 13705.0,
+   "B4_to_B6_gbp": 555780
+  },
+  {
+   "date": "2026-10-13",
+   "complete": true,
+   "north_of_B4_mwh": 109327.2,
+   "north_of_B4_gbp": 3637766,
+   "B4_to_B6_mwh": 33721.6,
+   "B4_to_B6_gbp": 1539419
+  },
+  {
+   "date": "2026-10-14",
+   "complete": true,
+   "north_of_B4_mwh": 98347.3,
+   "north_of_B4_gbp": 2467767,
+   "B4_to_B6_mwh": 49627.2,
+   "B4_to_B6_gbp": 2864946
+  },
+  {
+   "date": "2026-10-15",
+   "complete": true,
+   "north_of_B4_mwh": 65025.0,
+   "north_of_B4_gbp": 1038959,
+   "B4_to_B6_mwh": 15184.2,
+   "B4_to_B6_gbp": 816451
+  },
+  {
+   "date": "2026-10-16",
+   "complete": true,
+   "north_of_B4_mwh": 10229.2,
+   "north_of_B4_gbp": -227367,
+   "B4_to_B6_mwh": 1281.6,
+   "B4_to_B6_gbp": 389
+  },
+  {
+   "date": "2026-10-17",
+   "complete": true,
+   "north_of_B4_mwh": 2036.4,
+   "north_of_B4_gbp": -9971,
+   "B4_to_B6_mwh": 1741.6,
+   "B4_to_B6_gbp": 73618
+  },
+  {
+   "date": "2026-10-18",
+   "complete": true,
+   "north_of_B4_mwh": 458.5,
+   "north_of_B4_gbp": -42828,
+   "B4_to_B6_mwh": 0.0,
+   "B4_to_B6_gbp": 0
+  },
+  {
+   "date": "2026-10-19",
+   "complete": true,
+   "north_of_B4_mwh": 20954.4,
+   "north_of_B4_gbp": -381768,
+   "B4_to_B6_mwh": 2628.8,
+   "B4_to_B6_gbp": 19279
+  },
+  {
+   "date": "2026-10-20",
+   "complete": true,
+   "north_of_B4_mwh": 89953.1,
+   "north_of_B4_gbp": 176472,
+   "B4_to_B6_mwh": 12265.6,
+   "B4_to_B6_gbp": 162068
+  },
+  {
+   "date": "2026-10-21",
+   "complete": true,
+   "north_of_B4_mwh": 38176.5,
+   "north_of_B4_gbp": -29697,
+   "B4_to_B6_mwh": 4037.0,
+   "B4_to_B6_gbp": 61752
+  },
+  {
+   "date": "2026-10-22",
+   "complete": true,
+   "north_of_B4_mwh": 55727.9,
+   "north_of_B4_gbp": 482234,
+   "B4_to_B6_mwh": 6844.5,
+   "B4_to_B6_gbp": 301516
+  },
+  {
+   "date": "2026-10-23",
+   "complete": true,
+   "north_of_B4_mwh": 15811.0,
+   "north_of_B4_gbp": 223646,
+   "B4_to_B6_mwh": 12154.7,
+   "B4_to_B6_gbp": 323042
+  },
+  {
+   "date": "2026-10-24",
+   "complete": true,
+   "north_of_B4_mwh": 60728.9,
+   "north_of_B4_gbp": 2710465,
+   "B4_to_B6_mwh": 24143.6,
+   "B4_to_B6_gbp": 1854411
+  },
+  {
+   "date": "2026-10-25",
+   "complete": true,
+   "north_of_B4_mwh": 90942.1,
+   "north_of_B4_gbp": 4853449,
+   "B4_to_B6_mwh": 13573.9,
+   "B4_to_B6_gbp": 950232
+  },
+  {
+   "date": "2026-10-26",
+   "complete": true,
+   "north_of_B4_mwh": 79939.3,
+   "north_of_B4_gbp": 2140564,
+   "B4_to_B6_mwh": 22474.5,
+   "B4_to_B6_gbp": 994386
+  }
+ ],
+ "top_sites_30d": [
+  {
+   "site": "Seagreen",
+   "zone": "north_of_B4",
+   "mwh": 392475.3,
+   "gbp": 5532677,
+   "gbp_per_mwh": 14.1
+  },
+  {
+   "site": "Moray West",
+   "zone": "north_of_B4",
+   "mwh": 301344.8,
+   "gbp": 6009936,
+   "gbp_per_mwh": 19.94
+  },
+  {
+   "site": "Moray East",
+   "zone": "north_of_B4",
+   "mwh": 282003.7,
+   "gbp": -5361833,
+   "gbp_per_mwh": -19.01
+  },
+  {
+   "site": "Viking",
+   "zone": "north_of_B4",
+   "mwh": 146239.7,
+   "gbp": 2333456,
+   "gbp_per_mwh": 15.96
+  },
+  {
+   "site": "Neart na Gaoithe",
+   "zone": "B4_to_B6",
+   "mwh": 110670.8,
+   "gbp": 5369830,
+   "gbp_per_mwh": 48.52
+  },
+  {
+   "site": "Beatrice",
+   "zone": "north_of_B4",
+   "mwh": 95282.2,
+   "gbp": 6423486,
+   "gbp_per_mwh": 67.42
+  },
+  {
+   "site": "Stronelairg",
+   "zone": "north_of_B4",
+   "mwh": 46267.2,
+   "gbp": 3725432,
+   "gbp_per_mwh": 80.52
+  },
+  {
+   "site": "Limekiln",
+   "zone": "north_of_B4",
+   "mwh": 31674.7,
+   "gbp": 905091,
+   "gbp_per_mwh": 28.57
+  },
+  {
+   "site": "North Kyle",
+   "zone": "B4_to_B6",
+   "mwh": 29610.4,
+   "gbp": 620594,
+   "gbp_per_mwh": 20.96
+  },
+  {
+   "site": "South Kyle",
+   "zone": "B4_to_B6",
+   "mwh": 27688.7,
+   "gbp": 1310893,
+   "gbp_per_mwh": 47.34
+  },
+  {
+   "site": "Dorenell",
+   "zone": "north_of_B4",
+   "mwh": 22566.6,
+   "gbp": -279663,
+   "gbp_per_mwh": -12.39
+  },
+  {
+   "site": "Dorenell Two",
+   "zone": "north_of_B4",
+   "mwh": 21995.1,
+   "gbp": -29541,
+   "gbp_per_mwh": -1.34
+  },
+  {
+   "site": "Aikengall IIa",
+   "zone": "B4_to_B6",
+   "mwh": 19147.7,
+   "gbp": 929681,
+   "gbp_per_mwh": 48.55
+  },
+  {
+   "site": "Fallago Rig",
+   "zone": "B4_to_B6",
+   "mwh": 17538.4,
+   "gbp": 1443352,
+   "gbp_per_mwh": 82.3
+  },
+  {
+   "site": "Griffin",
+   "zone": "north_of_B4",
+   "mwh": 15680.7,
+   "gbp": 1324478,
+   "gbp_per_mwh": 84.47
+  }
+ ],
+ "checks": {
+  "annual_check": [
+   {
+    "year": 2025,
+    "metric": "wind_curtailed_mwh_all",
+    "unit": "TWh",
+    "ours": 9.86,
+    "theirs": 10.0,
+    "delta_pct": -1.4,
+    "source_url": "https://energydigital.com/news/how-the-ukis-ageing-grids-wasted-10twh-of-energy-in-2025"
+   },
+   {
+    "year": 2025,
+    "metric": "wind_curtailed_mwh_north_of_B4",
+    "unit": "TWh",
+    "ours": 8.63,
+    "theirs": 8.8,
+    "delta_pct": -1.9,
+    "source_url": "https://www.energyvoice.com/renewables-energy-transition/wind/uk-wind/590566/scottish-wind-curtailment-costs-hit-343m-in-2025-as-grid-constraints-worsened-report-finds/"
+   },
+   {
+    "year": 2025,
+    "metric": "wind_payment_gbp_all",
+    "unit": "GBP m",
+    "ours": 368.18,
+    "theirs": 363.0,
+    "delta_pct": 1.4,
+    "source_url": "https://energydigital.com/news/how-the-ukis-ageing-grids-wasted-10twh-of-energy-in-2025"
+   },
+   {
+    "year": 2025,
+    "metric": "wind_payment_gbp_scotland",
+    "unit": "GBP m",
+    "ours": 352.09,
+    "theirs": 343.0,
+    "delta_pct": 2.7,
+    "source_url": "https://www.energyvoice.com/renewables-energy-transition/wind/uk-wind/590566/scottish-wind-curtailment-costs-hit-343m-in-2025-as-grid-constraints-worsened-report-finds/"
+   },
+   {
+    "year": 2025,
+    "metric": "wind_payment_gbp_north_of_B4",
+    "unit": "GBP m",
+    "ours": 288.66,
+    "theirs": 300.0,
+    "delta_pct": -3.8,
+    "source_url": "https://www.energyvoice.com/renewables-energy-transition/wind/uk-wind/590566/scottish-wind-curtailment-costs-hit-343m-in-2025-as-grid-constraints-worsened-report-finds/"
+   }
+  ],
+  "source_gaps": [
+   "2025-10-14"
+  ],
+  "mapping": {
+   "scottish_units": 135,
+   "verified": 96
+  }
+ },
+ "attribution": [
+  "Contains BMRS data \u00a9 Elexon Limited copyright and database right 2026",
+  "Supported by National Energy SO Open Data"
+ ],
+ "licences": {
+  "elexon": "https://www.elexon.co.uk/data/balancing-mechanism-reporting-agent/copyright-licence-bmrs-data/",
+  "neso": "https://www.neso.energy/data-portal/ngeso-open-licence"
+ }
+}
