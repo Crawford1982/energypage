@@ -1,61 +1,53 @@
 {
- "generated_at": "2026-10-30T13:05:42Z",
- "data_through": "2026-10-29",
+ "generated_at": "2026-10-31T12:43:40Z",
+ "data_through": "2026-10-30",
  "windows": {
   "7d": {
-   "start": "2026-10-23",
-   "end": "2026-10-29",
+   "start": "2026-10-24",
+   "end": "2026-10-30",
    "scotland": {
-    "mwh": 617223.6,
-    "gbp": 22407448
+    "mwh": 637182.2,
+    "gbp": 21136333
    },
    "zones": {
     "north_of_B4": {
-     "mwh": 460169.9,
-     "gbp": 14085375,
+     "mwh": 487261.1,
+     "gbp": 13158169,
      "units": 69,
-     "gbp_per_mwh": 30.61
+     "gbp_per_mwh": 27.0
     },
     "B4_to_B6": {
-     "mwh": 157053.7,
-     "gbp": 8322074,
+     "mwh": 149921.0,
+     "gbp": 7978164,
      "units": 50,
-     "gbp_per_mwh": 52.99
+     "gbp_per_mwh": 53.22
     }
    }
   },
   "30d": {
-   "start": "2026-09-30",
-   "end": "2026-10-29",
+   "start": "2026-10-01",
+   "end": "2026-10-30",
    "scotland": {
-    "mwh": 2009573.0,
-    "gbp": 55370509
+    "mwh": 1933271.0,
+    "gbp": 50759396
    },
    "zones": {
     "north_of_B4": {
-     "mwh": 1591510.9,
-     "gbp": 33975681,
-     "units": 71,
-     "gbp_per_mwh": 21.35
+     "mwh": 1534316.1,
+     "gbp": 30583350,
+     "units": 70,
+     "gbp_per_mwh": 19.93
     },
     "B4_to_B6": {
-     "mwh": 418062.1,
-     "gbp": 21394828,
-     "units": 55,
-     "gbp_per_mwh": 51.18
+     "mwh": 398954.9,
+     "gbp": 20176046,
+     "units": 54,
+     "gbp_per_mwh": 50.57
     }
    }
   }
  },
  "daily": [
-  {
-   "date": "2026-08-01",
-   "complete": true,
-   "north_of_B4_mwh": 2280.1,
-   "north_of_B4_gbp": -3920,
-   "B4_to_B6_mwh": 872.6,
-   "B4_to_B6_gbp": 49568
-  },
   {
    "date": "2026-08-02",
    "complete": true,
@@ -767,112 +759,120 @@
    "north_of_B4_gbp": -471721,
    "B4_to_B6_mwh": 535.2,
    "B4_to_B6_gbp": -11051
+  },
+  {
+   "date": "2026-10-30",
+   "complete": true,
+   "north_of_B4_mwh": 42902.2,
+   "north_of_B4_gbp": -703559,
+   "B4_to_B6_mwh": 5022.1,
+   "B4_to_B6_gbp": -20868
   }
  ],
  "top_sites_30d": [
   {
    "site": "Seagreen",
    "zone": "north_of_B4",
-   "mwh": 400867.2,
-   "gbp": 5741105,
-   "gbp_per_mwh": 14.32
+   "mwh": 393949.9,
+   "gbp": 5676399,
+   "gbp_per_mwh": 14.41
   },
   {
    "site": "Moray West",
    "zone": "north_of_B4",
-   "mwh": 306773.4,
-   "gbp": 5978671,
-   "gbp_per_mwh": 19.49
+   "mwh": 297173.5,
+   "gbp": 5716097,
+   "gbp_per_mwh": 19.23
   },
   {
    "site": "Moray East",
    "zone": "north_of_B4",
-   "mwh": 288813.7,
-   "gbp": -6117181,
-   "gbp_per_mwh": -21.18
+   "mwh": 280191.9,
+   "gbp": -6794997,
+   "gbp_per_mwh": -24.25
   },
   {
    "site": "Viking",
    "zone": "north_of_B4",
-   "mwh": 145984.5,
-   "gbp": 2368425,
-   "gbp_per_mwh": 16.22
+   "mwh": 139933.6,
+   "gbp": 2272771,
+   "gbp_per_mwh": 16.24
   },
   {
    "site": "Neart na Gaoithe",
    "zone": "B4_to_B6",
-   "mwh": 110437.6,
-   "gbp": 4665819,
-   "gbp_per_mwh": 42.25
+   "mwh": 107752.8,
+   "gbp": 4451962,
+   "gbp_per_mwh": 41.32
   },
   {
    "site": "Beatrice",
    "zone": "north_of_B4",
-   "mwh": 96050.8,
-   "gbp": 5990883,
-   "gbp_per_mwh": 62.37
+   "mwh": 93413.7,
+   "gbp": 5595010,
+   "gbp_per_mwh": 59.89
   },
   {
    "site": "Stronelairg",
    "zone": "north_of_B4",
-   "mwh": 45666.4,
-   "gbp": 3675197,
-   "gbp_per_mwh": 80.48
+   "mwh": 41319.8,
+   "gbp": 3324326,
+   "gbp_per_mwh": 80.45
   },
   {
    "site": "North Kyle",
    "zone": "B4_to_B6",
-   "mwh": 32363.8,
-   "gbp": 678302,
+   "mwh": 31703.7,
+   "gbp": 664467,
    "gbp_per_mwh": 20.96
   },
   {
    "site": "Limekiln",
    "zone": "north_of_B4",
-   "mwh": 31234.9,
-   "gbp": 892525,
+   "mwh": 29971.7,
+   "gbp": 856429,
    "gbp_per_mwh": 28.57
   },
   {
    "site": "South Kyle",
    "zone": "B4_to_B6",
-   "mwh": 29809.1,
-   "gbp": 1493648,
-   "gbp_per_mwh": 50.11
+   "mwh": 26640.7,
+   "gbp": 1345670,
+   "gbp_per_mwh": 50.51
   },
   {
    "site": "Dorenell Two",
    "zone": "north_of_B4",
-   "mwh": 22931.9,
-   "gbp": -66118,
-   "gbp_per_mwh": -2.88
+   "mwh": 22613.2,
+   "gbp": -151782,
+   "gbp_per_mwh": -6.71
   },
   {
    "site": "Fallago Rig",
    "zone": "B4_to_B6",
-   "mwh": 21244.4,
-   "gbp": 1747157,
+   "mwh": 20878.7,
+   "gbp": 1717055,
    "gbp_per_mwh": 82.24
   },
   {
    "site": "Dorenell",
    "zone": "north_of_B4",
-   "mwh": 20510.9,
-   "gbp": -337173,
-   "gbp_per_mwh": -16.44
+   "mwh": 20266.1,
+   "gbp": -461261,
+   "gbp_per_mwh": -22.76
   },
   {
    "site": "Aikengall IIa",
    "zone": "B4_to_B6",
-   "mwh": 20220.8,
-   "gbp": 981782,
+   "mwh": 19544.3,
+   "gbp": 948937,
    "gbp_per_mwh": 48.55
   },
   {
    "site": "Whitelee",
    "zone": "B4_to_B6",
-   "mwh": 19901.3,
-   "gbp": 1744304,
+   "mwh": 18329.7,
+   "gbp": 1606590,
    "gbp_per_mwh": 87.65
   }
  ],
